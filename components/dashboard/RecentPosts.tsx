@@ -11,8 +11,8 @@ import { formatDate, getPlatformInfo } from '@/lib/utils';
 import { Clock, CheckCircle, XCircle } from 'lucide-react';
 
 export function RecentPosts() {
-  const { posts, setPosts, setLoading } = usePostsStore();
-  const [loading, setLoading] = useState(true);
+  const { posts, setPosts } = usePostsStore();
+  const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function loadPosts() {
@@ -22,7 +22,7 @@ export function RecentPosts() {
       } catch (error) {
         console.error('Failed to load posts:', error);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     }
     loadPosts();
