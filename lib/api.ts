@@ -16,8 +16,9 @@ import type {
   CalendarData,
   LoginCredentials,
   RegisterData,
-  ApiError,
-} from '@/types';
+}
+from '@/types';
+import { ApiError } from '@/types';
 
 const GAS_API_URL = process.env.NEXT_PUBLIC_GAS_API_URL || '';
 
